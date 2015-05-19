@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kathleen Matthews | UX Designer | San Francisco, CA</title>
+    <meta name="author" content="Kathleen Matthews">
+    <meta name="keywords" content="Kathleen Matthews, UI/UX Designer, Mobile UI/UX designer, Interaction Designer, San Francisco, Front-End Developer">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <link rel="stylesheet" href="css/portfolio.css"/>
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>  
+  <!-- Nav Section -->   
+    <div class="topBar wrap">
+      <div id="home">
+        <div class="name"><h1><a href="index.html">kathleen matthews</a></h1></div>
+        <div class="ux"><h2>ux designer</h2></div>
+      </div>
+    </div>
+  
+    <div class="circleContainerSecondary">
+      <div class="circle portfolio"><div><a href="index.html#work">portfolio</a></div></div>
+      <div class="circle about"><div><a href="index.html#about">about</a></div></div>
+      <div class="circle contact"><div><a href="index.html#contact">contact</a></div></div>
+    </div>
+
+    <!-- Portfolio Section -->  
+    <div class="row wrap"> 
+      <div class="secondary">
+        <div class="sectionHeader">COZY
+          <div class="projectHeader">Mobile Sign-up & Prototype</div>
+          <img class="mainImage" src="img/cozy.png">
+        </div>
+        <div class="projectContainer">
+          
+          <div class = "overview"> 
+            <div class = "brief">
+              <h4>Project Brief:</h4>
+              <a href="http://cozy.co" class="underline" target="_blank">Cozy</a> is simple, end-to-end rental management software for landlords and tenants. They were looking to make a sign-up flow for prospective tenants that was mobile first and as quick and painless as possible.
+              <div><a href="https://www.flinto.com/p/3adf3543" class="button" target="_blank">View Mobile Prototype</a></div>
+              <div><a href="https://cozy.co/signup" class="button" target="_blank">View Website</a></div>
+              
+            </div> 
+            <div class = "role">
+              <h4>Role:</h4>
+              I collaborated with the Lead Designer to define the flow and interactions to make the process of entering a large amount of personal information feel secure and easy on a mobile device. I made prototyped multiple iterations in Flinto, updating based on testing feedback.
+            </div>
+          </div>
+        </div>
+        <div class="circleContainerSecondary">
+          <div class="circle portfolio"><div><a href="index.html#work">portfolio</a></div></div>
+          <div class="circle about"><div><a href="index.html#about">about</a></div></div>
+          <div class="circle contact"><div><a href="index.html#contact">contact</a></div>
+        </div>
+
+
+      <!-- scripts --> 
+	    <script src="js/vendor/jquery.js"></script>
+	    <script type="text/javascript">
+	      $(document).ready(function(){
+	          $('a[href*=#]').bind("click", function(e){
+	          var anchor = $(this);
+	          var locate =  $.attr(this, 'href').substr($.attr(this, 'href').indexOf('#')+1);
+	          $('html, body').stop().animate({
+	              scrollTop: $('[id="' + locate + '"]').offset().top
+	          }, 800, "swing");
+
+	          $(this).delay(800).queue(function(){ window.location.hash = locate; });
+	          e.preventDefault();
+	        });
+	      });    
+	    </script> 
+	    
+  </body>
+</html>
+
+
