@@ -1,5 +1,14 @@
+/*google fonts
+font-family: 'Roboto', sans-serif;
+font-family: 'Inconsolata', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Arvo', serif;
+
+
+*/
+
 body {
-font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+font-family: 'Roboto', sans-serif;
 font-weight: normal;
 font-style: normal;
 line-height: 1;
@@ -103,7 +112,7 @@ border: 0;
 }
 
 .circle div a{
-    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.4em;
     color: white;
     letter-spacing: 1.5px;
@@ -114,21 +123,21 @@ border: 0;
     }
 
 h1 a {
-    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
     margin: 1em 0em;
     color: black;
     font-size: 1.2em;
   }
 
 h2 {
-    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
     margin: 1em 0em;
     color: #777777;
     font-size: 1.4em;
   }
 
 h4  {
-    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 1.4em;
     text-align: center;
     margin-top: 2em;
@@ -171,6 +180,7 @@ max-width: 70em;
 }
 
 .name {
+  -webkit-margin-before: 4em;
   text-align: center;
   letter-spacing: 3px;
  }
@@ -196,7 +206,7 @@ max-width: 70em;
 .sectionHeader {
   margin-top: 3em;
   font-size: 2em;
-  font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   text-align: center;
   border-bottom: solid #999999 1px;
  }
@@ -223,7 +233,7 @@ max-width: 70em;
 
 .projectHeader {
   font-size: 1em;
-  font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   color: #999;
   text-transform: uppercase;
   
@@ -231,7 +241,7 @@ max-width: 70em;
 
 .sectionHeader .projectHeader {
   font-size: .5em;
-  font-family: Futura, “Trebuchet MS”, Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   color: #999;
 }
 
@@ -273,7 +283,7 @@ max-width: 70em;
 }
 
 .button {
-  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   background-color: #888888;
   color: #FFFFFF;
   border-radius: 16px;
