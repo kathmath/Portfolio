@@ -60,7 +60,11 @@ module.exports = function(grunt) {
   			files: ['src/scss/**/*.scss'],
   			tasks: ['sass:dev']
   		}
-  	}
+  	},
+    htmllint: {
+      options: {},
+      src: ['*.html'],
+    },
   });
 
   // Load the plugins.
@@ -68,9 +72,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-htmllint');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify:dev', 'sass:dev']);
+  grunt.registerTask('default', ['uglify:dev', 'sass:dev', 'htmllint']);
   grunt.registerTask('build', ['uglify:build', 'postcss:build', 'sass:build']);
 
 };

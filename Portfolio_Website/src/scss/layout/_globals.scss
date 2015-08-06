@@ -25,7 +25,7 @@ $head-font: 'Raleway', sans-serif;
 	font-size: $size;
 }
 
-@mixin flexContainer($flex-direction, $align-items, $justify-content, $wrap) {
+@mixin flex_container($flex-direction, $align-items, $justify-content, $wrap) {
 	display: flex;
 	flex-direction: $flex-direction;
 	align-items: $align-items;
@@ -77,7 +77,7 @@ h3 {
 }
 
 h4 {
-	@include headings(2rem);
+	@include headings(1.4rem);
 	margin-top: $margin * 4;
 }
 
@@ -97,24 +97,25 @@ ul {
 
 //class & id styles
 
-// .wrap {
-// 	@include flexContainer(column, center, stretch, nowrap);
-// 	max-width: 60em;
-// 	margin: 0 auto;
-// }
+.wrap {
+	@include flex_container(column, center, stretch, nowrap);
+	max-width: 60em;
+	margin: 0 auto;
+}
 
 //nav styles
 
 
 
-.circleContainer {
-	@include flexContainer(row, center, space-around, nowrap);
+.circle_container {
+	@include flex_container(row, center, space-around, nowrap);
 	max-width: 60rem;
 	margin: 4em auto;
 	margin-bottom: 2em;  		
 }
 
 .circle {
+	// display: flex;
     width:25%;
     div {
 	    float:left;
@@ -191,11 +192,23 @@ ul {
 
 //resume
 
-.resumeSection {
-	@include flexContainer(column, center, center, wrap)
+.about_text {
+	@include flex_container(column, center, center, wrap);
+	p, img {
+		display: flex;
+		width: 100%;
+		margin-top: $margin;
+		margin-bottom: $margin;
+	}
 }
 
-.resumeTitle {
+
+.resume_section {
+	@include flex_container(column, center, center, wrap);
+
+}
+
+.resume_title {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -211,7 +224,7 @@ ul {
 	}
 }
 
-.resumeText {
+.resume_text {
 	width: 100%;
 	margin: $margin 0;
 }
@@ -227,17 +240,28 @@ ul {
 		font-size: 1.2em;
 	}
 
-	//resume
-
-	.resumeSection {
-		@include flexContainer(row, stretch, space-between, nowrap)
+	//about
+	.about_text {
+		@include flex_container(row, center, space-between, nowrap);
+		p {
+			width: 65%;
+		}
+		img {
+			width: 30%;
+		}
 	}
 
-	.resumeTitle {
+	//resume
+
+	.resume_section {
+		@include flex_container(row, stretch, space-between, nowrap)
+	}
+
+	.resume_title {
 		width: 25%;
 	}
 
-	.resumeText {
+	.resume_text {
 		width: 75%;
 		margin-left: $margin * 2;
 		margin-top: $margin * 2;
