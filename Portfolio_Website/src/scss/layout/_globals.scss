@@ -8,12 +8,14 @@
 //variables
 $margin: 1em;
 $padding: 1em;
+$radius: 1em;
 $color1: #000;
 $color2: #283781;
 $color3: tomato;
 $color4: darkseagreen;
 $color5: #777;
 $color6: #fff;
+$hovercolor: blue;
 $main-font: 'Lato', sans-serif;
 $head-font: 'Raleway', sans-serif;
 
@@ -50,8 +52,9 @@ a {
 }
 
 a:hover {
+	color: $hovercolor;
 	padding-bottom: 1px;
-	border-bottom: 1px solid $color4;
+	// border-bottom: 1px solid $hovercolor;
 	transition: 0.5s;
 }
 
@@ -62,7 +65,7 @@ h1  {
 	}
 	a:hover {
 		border-bottom: none;
-		color: $color4;
+		color: $hovercolor;
 	}
   }
 
@@ -86,11 +89,20 @@ h5 {
 	margin-bottom: -0.8rem;	
 }
 
+// ul {
+// 	list-style: inside;
+// 	margin-top: -0.5em;
+// 	margin-bottom: 2em;
+// 	margin-left: 1em;
+// }
+
 ul {
-	list-style: inside;
-	margin-top: -0.5em;
-	margin-bottom: 2em;
-	margin-left: 1em;
+    list-style: disc outside none; 
+    margin-left: 1em; 
+    padding-left: 1em;
+}
+li {
+    padding-left: 0.4em;
 }
 
 
@@ -103,16 +115,39 @@ ul {
 	margin: 0 auto;
 }
 
+.body_container { 
+	margin: 0 auto; 
+	overflow: auto; 
+	padding-top: 250px; 
+	position: relative;
+	margin-top: 10px;
+	max-width: 60em;
+ }
+
 //nav styles
+
+.top_bar {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.9);
+	// margin: 0 auto;
+	z-index: 999;
+}
 
 
 
 .circle_container {
-	@include flex_container(row, center, space-around, nowrap);
-	max-width: 60rem;
-	margin: 4em auto;
-	margin-bottom: 2em;  		
+	@include flex_container(row, center, space-between, nowrap);
+	max-width: 25rem;
+	margin: $margin * 4 $margin * 2; 		
 }
+
+// .circle_container_smaller {
+// 	@extend .circle_container;
+// 	height: 80px;
+// }
 
 .circle {
 	// display: flex;
@@ -156,10 +191,18 @@ ul {
 }
 
 .circle:hover:after {
-    background-color: blue;
+    background-color: $hovercolor;
 }
 
+// nav on scroll & non index pages
+
+
+
+
 //main body styles
+.div {
+	position: relative;
+}
 
 .centered {
 	text-align: center;
@@ -169,13 +212,16 @@ ul {
 	font-style: italic;
 }
 
-.button {
+a.button {
 	background-color: $color5;
 	color: $color6;
-	border-radius: 16px;
+	border-radius: $radius;
 	text-decoration: none;
 	padding: 0.6em;
+	align-self: center;
 }
+
+a.button{}
 
 .blue {
 	background-color: $color2;
@@ -187,6 +233,34 @@ ul {
 
 .green {
 	background-color: $color4;
+}
+
+//work 
+
+#work {
+	@include flex_container(column, center, center, nowrap);
+}
+
+.project_container {
+	@include flex_container(column, center, center, nowrap);
+	p, img {
+		display: flex;
+		margin-top: $margin;
+		margin-bottom: $margin * 3;
+	}
+	.brand_logo {
+		max-height: 4em;
+		margin-bottom: 0;
+	}
+}
+
+.project_text {
+	@include flex_container(column, flex-start, center, wrap);
+}
+
+.project_image {
+	max-width: 100%;
+	border-radius: $radius;
 }
 
 
@@ -205,8 +279,9 @@ ul {
 
 .resume_section {
 	@include flex_container(column, center, center, wrap);
-
 }
+
+// .resume_section:nth-child()
 
 .resume_title {
 	display: flex;
@@ -214,7 +289,7 @@ ul {
 	align-items: center;
 
 	width: 100%;
-	border-radius: 1em;
+	border-radius: $radius;
 	margin-top: $margin * 2;
 	margin-bottom: $margin;
 	h3 {
@@ -229,27 +304,87 @@ ul {
 	margin: $margin 0;
 }
 
+.experience {
+	margin-bottom: 1rem;
+}
+
+//contact
+
+.social {
+	@include flex_container(row, center, space-between, nowrap);
+	margin: $margin * 4 auto;
+	max-width: 30em;
+	// a:hover {
+	// 	border-bottom: none;
+	// 	background-color: blue;
+	// }
+	img {
+		display: flex;
+	}
+
+		
+}
+
+//pages
+
+
+.embed {
+	margin: $margin * 4 0;
+}
 
 
 //media queries
 
 @media (min-width: 700px) {
 
+	a.button {
+		align-self: flex-start;
+	}
+
 	//nav
+
+	.circle_container {
+		margin: $margin * 4 auto; 		
+	}
 	.circle div a {
 		font-size: 1.2em;
 	}
+
 
 	//about
 	.about_text {
 		@include flex_container(row, center, space-between, nowrap);
 		p {
-			width: 65%;
+			width: 75%;
 		}
 		img {
-			width: 30%;
+			width: 25%;
 		}
 	}
+
+
+	//work
+
+	.project_container {
+		@include flex_container(row, center, space-between, nowrap);
+			margin-top: $margin * 4;
+		// p, img {
+		// 	display: flex;
+		// 	width: 100%;
+		// 	margin-top: $margin;
+		// 	margin-bottom: $margin;
+		// 	}
+		}
+
+	.project_text {
+		width: 75%;
+		margin-right: $margin * 2;
+	}
+
+	.project-image {
+		width: 25%;
+	} 
+
 
 	//resume
 
