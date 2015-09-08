@@ -229,9 +229,13 @@ a.button {
 	margin: $margin * 2 0;
 }
 
+.about_container {
+	@include flex_container(column, center, center, wrap);
+}
+
 .about_text {
 	@include flex_container(column, center, center, wrap);
-	p, img {
+	p {
 		display: flex;
 		width: 100%;
 		margin-top: $margin;
@@ -271,10 +275,35 @@ a.button {
 	margin-bottom: 1rem;
 }
 
+.resume_intro {
+	h1 {
+		margin-top: $margin * 2;
+	}
+	h2 {
+		margin-bottom: $margin * 4;
+	}
+	h3 {
+		margin-bottom: $margin;
+		font-size: 1em;
+	}	
+	p {
+		margin: 0;
+		margin-bottom: $margin;
+	}
+}
+
+.resume_container { 
+	margin: 0 auto; 
+	max-width: 60em;
+	.resume_section {
+		margin: 0;
+	}
+ }
+
 //contact
 
 #contact {
-	margin: 0 auto;
+	margin: $margin * 4 auto;
 }
 .social {
 	@include flex_container(row, center, space-between, nowrap);
@@ -315,7 +344,6 @@ a.button {
 
 	//nav
 
-
 	.circle_container {
 		margin: $margin * 4 auto; 		
 	}
@@ -328,13 +356,14 @@ a.button {
 
 	//about
 
-	#about {
+	.about_container {
 		@include flex_container(row, center, space-between, nowrap);
-	}
-	.about_text {
-		@include flex_container(column, center, space-between, nowrap);
-	}
+	} 
 
+	.about_text {
+		width: 75%;
+		margin-right: $margin * 2;
+	}
 
 	//work
 
@@ -346,11 +375,6 @@ a.button {
 		width: 75%;
 		margin-right: $margin * 2;
 	}
-
-	.project-image {
-		width: 25%;
-	} 
-
 
 	//resume
 
@@ -379,6 +403,5 @@ a.button {
 		}
 
 	}
-
 
 }
